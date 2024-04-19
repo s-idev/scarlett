@@ -1,5 +1,5 @@
 {
-  "name": "scarlett-vite-template",
+  "name": "@scarlett/vite-template",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,8 +9,8 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
+    "eslint-config": "*",
+    "typescript-config": "*",
     "typescript": "^5.2.2",
     "eslint": "^8.6.0",
     "vite": "^5.2.0"

@@ -79,3 +79,62 @@ Learn more about the power of Turborepo:
 - [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
 - [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
 - [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+
+# Structure
+
+## Packages
+- ## @scarlett-core:
+  - ### Emits:
+    - ScarlettCore:
+      - text:insert
+      - text:remove
+      - history:undo
+      - history:redo
+    - ScarlettInstance:
+      - text:insert
+      - text:remove
+      - history:undo
+      - history:redo
+  - ### Exports:
+    - Util functions:
+      - getBlockEditor: Returns instance of @scarlett-core editor.
+      - getCaretPos
+      - setCaretPos
+      - getBlockLastChild: Returns last child of @scarlett-core editor.
+      - getBlockFirstChild: Returns first child of @scarlett-core editor.
+    - Util variables:
+      - Block types
+      - Multi editor types
+      - Content block types
+      - Markdown
+        - Inline: Italics, Bold, Underline, Strikethrough
+        - "Shortcut patterns": Change block to specific type
+        - "Html to markdown": What markdown syntax is assosiated with what Html tag
+    - ScarlettCore: Manager for all editor instances
+    - ScarlettInstance: Used internally in ScarlettCore
+  - ### Libraries
+    - Tiptap
+      - @tiptap/extension-code
+      - @tiptap/extension-dropcursor
+      - @tiptap/extension-gapcursor
+      - @tiptap/extension-history
+- ## @scarlett-navigation:
+  - ### Emits:
+    - navigation:next
+    - navigation:prev
+  - ### Exports:
+    - Util functions:
+      - getPrevBlock: Returns previous @scarlett-core editor.
+      - getNextBlock: Returns next @scarlett-core editor.
+- ## @scarlett-selection:
+  - ### Emits:
+    - selection:copy,
+    - selection:pase,
+    - selection:add,
+    - selection:remove,
+- ## @scarlett-position:
+  - ### Emits:
+    - position:up,
+    - position:down,
+- ## @scarlett-core-types: Global types. (Blocks ect)
+- ## @scarlett-styling:
